@@ -18,21 +18,31 @@ Components:
   CPU's interrupt enable (IE) and interrupt flag (IFG) registers. If the Global Interrupt Enable (GIE) flag is set in the IE 
   register, and an interrupt condition is met (such as a timer compare match or a push button press), the handler generates 
   an interrupt signal (INTR) that prompts the CPU to jump to the specified memory address (PC of mem[type]).
+  
   Relevent addresses:
-  1.0x82C: IE - 8 bit register which enbale interupts local masking.
-  2.0x82D: IFG - 8 bit register that indicating the pending interupts requests.
-  3.0x82E: TYPE: - 8 bit register which contains the address in data memory byte that contains the address of the first                          command of the handled intrept's ISR.
+  
+  1. 0x82C: IE - 8 bit register which enbale interupts local masking.
+  
+  2. 0x82D: IFG - 8 bit register that indicating the pending interupts requests.
+  
+  3. 0x82E: TYPE: - 8 bit register which contains the address in data memory byte that contains the address of the first                          command of the handled intrept's ISR.
 
 * Timer Unit
   The timer unit is composed of the Basic Timer Control and Clock Registers (BTCCR0, BTCCR1, BTCTL) and generates a PWM        signal. The BTCCR0 and BTCCR1 registers set the timer period and compare value respectively, while the BTCTL register        configures timer settings.
   The timer also generates an interrupt request when it reaches a specific value configured by the programmer. The interupt 
   requst is indicated by the Basic Timer Interrupt Flag (BTIFG).
+  
   Relevent addresses:
-  1.0x81C: BTCTL - A control register which is used to configre interupts frequency, clock frequency division, and enables 
+  
+  1. 0x81C: BTCTL - A control register which is used to configre interupts frequency, clock frequency division, and enables 
   holding the timer's core still using a control bit. The BTCTL is also used to enable\disable the PWM generation.
-  2.0x820: BTCNT - This is the timer's 32 bit core register. It's progressing pace is defined by BTCTL. When it's reach a       scpecific value (which is also configured in BTCTL) an interupt request is created. If PWM generating is on the core is      cleared when it reaches the value of BTCCR0 register.
-  3.0x824: BTCCT0 - This register defines the period of the PWM by clearing BTCNT when they both are equal.
-  4.0x828: BTCCR1 - This register defines the duty cycle of the generated PWM. The bit which is the PWM is set when BTCNT is   cleared and reset when BTCNT reaches the value of BTCCR1.
+  
+  2. 0x820: BTCNT - This is the timer's 32 bit core register. It's progressing pace is defined by BTCTL. When it's reach a       scpecific value (which is also configured in BTCTL) an interupt request is created. If PWM generating is on the core is      cleared when it reaches the value of BTCCR0 register.
+  
+  3. 0x824: BTCCT0 - This register defines the period of the PWM by clearing BTCNT when they both are equal.
+  
+  4. 0x828: BTCCR1 - This register defines the duty cycle of the generated PWM. The bit which is the PWM is set when BTCNT 
+     is cleared and reset when BTCNT reaches the value of BTCCR1.
   
   
 * GPIO Interface
