@@ -47,4 +47,13 @@ Components:
   
 * GPIO Interface
   The GPIO interface controls LEDs and HEX displays for output and reads switches for input. LEDs and HEX displays can be      configured to display specific patterns or values, and switches can be monitored for changes in their states.
+  
   Relevent addresses:
+  1. 0x800: LEDs - An eight size vector.
+  2. 0x804: HEX0- A seven segment digit (OUTPUT).
+  3. 0x805: HEX1- A seven segment digit (OUTPUT).
+  4. 0x808: HEX2- A seven segment digit (OUTPUT).
+  5. 0x809: HEX3- A seven segment digit (OUTPUT).
+  6. 0x80C: HEX4- A seven segment digit (OUTPUT).
+  7. 0x80D: HEX5- A seven segment digit (OUTPUT).
+  8. 0X810: SWITCHES - An eight bit size vector (INPUT).
