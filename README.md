@@ -1,12 +1,14 @@
-"# CPU-LAB" 
 "# MCU-project" 
-MIPS Pipeline CPU with GPIO, Timer, and Interrupt Handler - VHDL Project
-This repository contains a VHDL project implementing a MIPS pipeline CPU with integrated components for GPIO interfacing using LEDs and HEX displays as outputs, switches as inputs, a basic timer unit with PWM and interrupt generation, and an interrupt handler to facilitate communication between the CPU and the peripherals. 
-This project aims to provide a comprehensive example of designing a MIPS-based system with basic I/O, timing, and interrupt functionalities.
+A microcontroller based on MIPS Pipeline core, including GPIO, Timer module, and Interrupt Handler. This is a VHDL Project implemented on Altera FPGA SOC.
 
-Components
-MIPS Pipeline CPU
-The MIPS pipeline CPU is a multi-stage architecture that optimizes instruction execution by breaking it into several stages, including Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write Back (WB). This component is responsible for executing MIPS assembly instructions fetched from memory.
+This project aims to provide a comprehensive example of designing a MIPS-based system with basic I/O, timing, and interrupt functionalities.
+The microcontroller is integrated with components for GPIO interfacing using LEDs and HEX displays as outputs, switches as inputs, a basic timer unit with PWM and interrupt generation, and an interrupt handler to facilitate communication between the CPU and the peripherals. 
+
+
+Components:
+* MIPS Pipeline CPU
+  The MIPS pipeline CPU is a multi-stage architecture that optimizes instruction execution by breaking it into several       
+  stages, including Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write Back (WB).   This component is responsible for executing MIPS assembly instructions fetched from instruction memory. The core also        contains data cache of  memory and 
 
 GPIO Interface
 The GPIO interface controls LEDs and HEX displays for output and reads switches for input. LEDs and HEX displays can be configured to display specific patterns or values, and switches can be monitored for changes in their states.
